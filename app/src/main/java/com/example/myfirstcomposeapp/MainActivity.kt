@@ -11,10 +11,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myfirstcomposeapp.components.MyText
+import com.example.myfirstcomposeapp.components.layout.ConstraintBarrier
+import com.example.myfirstcomposeapp.components.layout.ConstraintChain
+import com.example.myfirstcomposeapp.components.layout.ConstraintExampleGuide
 import com.example.myfirstcomposeapp.components.layout.MyBasicConstraintLayout
 import com.example.myfirstcomposeapp.components.layout.MyComplexLayout
 import com.example.myfirstcomposeapp.ejercicio.ExerciseLayout
 import com.example.myfirstcomposeapp.ejercicio.RowColumnBox
+import com.example.myfirstcomposeapp.state.MyState
 import com.example.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +29,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ExerciseLayout(Modifier.padding(innerPadding))
+                    MyText(Modifier.padding(innerPadding))
                 }
             }
         }

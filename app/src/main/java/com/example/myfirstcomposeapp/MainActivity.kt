@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myfirstcomposeapp.components.MyNetworkImage
 import com.example.myfirstcomposeapp.components.MyProgress
+import com.example.myfirstcomposeapp.components.MyProgressAdvance
+import com.example.myfirstcomposeapp.components.MyProgressAnimation
 import com.example.myfirstcomposeapp.components.MyText
 import com.example.myfirstcomposeapp.components.MyTextField
 import com.example.myfirstcomposeapp.components.MyTextFieldParent
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyProgress(Modifier.padding(innerPadding))
+                    MyProgressAnimation(Modifier.padding(innerPadding))
                 }
             }
         }

@@ -11,7 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myfirstcomposeapp.components.MyNetworkImage
+import com.example.myfirstcomposeapp.components.MyProgress
 import com.example.myfirstcomposeapp.components.MyText
+import com.example.myfirstcomposeapp.components.MyTextField
+import com.example.myfirstcomposeapp.components.MyTextFieldParent
 import com.example.myfirstcomposeapp.components.layout.ConstraintBarrier
 import com.example.myfirstcomposeapp.components.layout.ConstraintChain
 import com.example.myfirstcomposeapp.components.layout.ConstraintExampleGuide
@@ -29,7 +33,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyFirstComposeAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyText(Modifier.padding(innerPadding))
+                    MyProgress(Modifier.padding(innerPadding))
                 }
             }
         }

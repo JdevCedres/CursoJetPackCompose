@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
@@ -22,6 +24,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalOf
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.unit.dp
@@ -182,4 +186,45 @@ fun MyTriStateCheckBox(modifier: Modifier = Modifier) {
             Text("Example 2")
         }
     }
+}
+
+@Composable
+fun MyRadioButton(modifier: Modifier = Modifier) {
+    var state by remember { mutableStateOf(true) }
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier) {
+        RadioButton(
+            selected = state,
+            onClick = { state = true },
+            enabled = true,
+            colors = RadioButtonDefaults.colors(
+                selectedColor = Color.Red,
+                unselectedColor = Color.Yellow,
+                disabledSelectedColor = Color.Cyan,
+                disabledUnselectedColor = Color.Magenta
+            )
+        )
+        Text("Example 1")
+    }
+
+}
+
+@Composable
+fun MyRadioButtonList(modifier: Modifier = Modifier) {
+    var selectedName by remember { mutableStateOf("") }
+    Column(modifier = modifier) {
+        RadioButtonComponent("Jose", selectedName = selectedName) { selectedName = it }
+        RadioButtonComponent("Manuel", selectedName = selectedName) { selectedName = it }
+        RadioButtonComponent("Elena", selectedName = selectedName) { selectedName = it }
+        RadioButtonComponent("Adrian", selectedName = selectedName) { selectedName = it }
+        RadioButtonComponent("Aitana", selectedName = selectedName) { selectedName = it }
+    }
+}
+
+@Composable
+fun RadioButtonComponent(name: String, selectedName: String, onItemSelected: (String) -> Unit) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        RadioButton(selected = name == selectedName, onClick = { onItemSelected(name) })
+        Text(name, modifier = Modifier.clickable { onItemSelected(name) })
+    }
+
 }

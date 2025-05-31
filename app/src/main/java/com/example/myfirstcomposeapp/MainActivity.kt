@@ -9,6 +9,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -22,6 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myfirstcomposeapp.components.MyDropDownMenu
+import com.example.myfirstcomposeapp.components.MyFAB
+import com.example.myfirstcomposeapp.components.MyNavigationBar
 import com.example.myfirstcomposeapp.components.MyTopAppBar
 import com.example.myfirstcomposeapp.ui.theme.MyFirstComposeAppTheme
 import kotlinx.coroutines.launch
@@ -37,7 +40,10 @@ class MainActivity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     topBar = { MyTopAppBar() },
-                    snackbarHost = { SnackbarHost(snackBarHostState) }
+                    snackbarHost = { SnackbarHost(snackBarHostState)},
+                    floatingActionButton = { MyFAB() },
+                    floatingActionButtonPosition = FabPosition.Start,
+                    bottomBar = {MyNavigationBar()}
                 )
                 { innerPadding ->
                     Box(

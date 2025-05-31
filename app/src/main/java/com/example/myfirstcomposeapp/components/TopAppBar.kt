@@ -29,7 +29,7 @@ fun MyTopAppBar(modifier: Modifier = Modifier) {
             Icon(
                 painter = painterResource(R.drawable.ic_info),
                 contentDescription = "",
-                tint = Color.Yellow
+                tint = Color.White
             )
             Icon(
                 painter = painterResource(R.drawable.ic_info),
@@ -37,10 +37,10 @@ fun MyTopAppBar(modifier: Modifier = Modifier) {
             )
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Gray,
+            containerColor = Color.Red,
             titleContentColor = Color.White,
-            navigationIconContentColor = Color.Yellow,
-            actionIconContentColor = Color.Red,
+            navigationIconContentColor = Color.White,
+            actionIconContentColor = Color.White,
         )
     )
 }
